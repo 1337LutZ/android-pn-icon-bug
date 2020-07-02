@@ -19,6 +19,14 @@
     "ios": {
       "supportsTablet": true
     },
+    "android": {
+      "useNextNotificationsApi": true
+    },
+    "notification": {
+      "icon": "./assets/pn-icon.png",
+      "color": "#ff0000",
+      "iosDisplayInForeground": true
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     }
