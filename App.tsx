@@ -3,13 +3,13 @@ import Constants from 'expo-constants';
 import * as Notifications from 'expo-notifications';
 import * as Permissions from 'expo-permissions';
 import React, { FC, useEffect, useState } from 'react';
-import { Text, View, Button, Platform } from 'react-native';
+import { Text, View, Button, Platform, TextInput } from 'react-native';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
-    shouldPlaySound: false,
-    shouldSetBadge: false,
+    shouldPlaySound: true,
+    shouldSetBadge: true,
   }),
 });
 
@@ -98,7 +98,8 @@ export const App: FC = () => {
         justifyContent: 'space-around',
       }}
     >
-      <Text>Your expo push token: {token}</Text>
+      <Text>Your expo push token:</Text>
+      <TextInput value={token} />
       {notification?.request && (
         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
           <Text>Title: {notification.request.content.title}</Text>
